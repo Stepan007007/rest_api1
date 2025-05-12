@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+          crossorigin="anonymous">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}" />
+
+    {% block titl %}{% endblock %}
+</head>
+<body class="bg-dark text-white">
+    <div class="container py-4">
+        <header class="text-center mb-5">
+            <div class="p-4 rounded-3 shadow-lg bg-gradient bg-opacity-25 border border-light">
+                <h1 class="display-5 fw-bold">🚀 Миссия: Колонизация Марса</h1>
+                <p class="fs-4 fst-italic text-light">И на Марсе будут яблони цвести!</p>
+            </div>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>
+

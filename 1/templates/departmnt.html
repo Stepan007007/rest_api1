@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    {% if current_user.is_authenticated %}
+    <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
+    <h3 class='navbar-brand'>{{ current_user.email }}<h3>
+    {% else %}
+      <p>
+          <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+          <a class="btn btn-success" href="/login">Войти</a>
+      </p>
+{% endif %}
+  <div>
+    <a href='/departments', class'btn btn-success'>Departements</a>
+    <a href='' clas='btn btn-success'>Job</a>
+    </div>
+  {% for elem in jobs %}
+      <div class="card text-danger">
+      <div class="card-header">
+         {{ elem.job }}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ elem.title}} {{ elem.user.name }}</h5>
+        <p class="card-text">{{ elem.members}}</p> 
+        <p class="card-text">{{ elem.email}}</p>
+        <a href="eddep/{{ elem.id }}" class="btn btn-primary">edit</a> 
+        <a href="deldep/{{ elem.id }}" class="btn btn-danger">delete</a>
+      </div>
+    </div>
+  {% endfor %}
+  <a href='/adddep', class='btn btn-success'>Add</a>
+</div>
+{% endblock %}
