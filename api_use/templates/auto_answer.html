@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% set lst = ['Фамилия:', 'Имя:', 'Образование:', 'Профессия:', 'Пол:', 'Мотивация:', 'Готовы остаться на Марсе?'] %}
+    {% for i in lst %}
+        <div>{{i}} {{data[i]}}</div>
+    {% endfor %}
+{% endblock %}
